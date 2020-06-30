@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  labels:
+    app: druid
+  name: druid-router-ingress
+  namespace: default
+spec:
+  rules:
+  - host: YOUR URL
+    http:
+      paths:
+      - backend:
+          serviceName: druid-tiny-cluster-routers
+          servicePort: 8888
+        path: /
